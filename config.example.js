@@ -3,7 +3,15 @@ module.exports = {
     listLength:15,
     listMaxLength:50,
     allow_push:true,
-    md5Salt:"secret"
+    md5Salt:"secret",
+    codeExpire:5*60,
+    accessTokenExpire:2*60*60,
+    verificationCodeExpire:5*60,
+    sessionTokenExpire:7*60*60*24,
+    minTimestamp:0,
+    maxTimestamp:99999999999,
+    userAvatar:"http://blog.bzxxg.cn/wp-content/uploads/2013/07/guest.png",
+    userName:"还没有起名字"
   },
   bearychat:{
     appTestChannel:"监听者",
@@ -27,7 +35,8 @@ module.exports = {
       school:"school:",
       city:"city:",
       college:"college:",
-      subscription:"subscription:"
+      subscription:"subscription:",
+      code:"code:"
     },
     string:{
       messageById:"message:id:",
@@ -36,16 +45,22 @@ module.exports = {
 
       channelByAlias:"channel:alias:",
 
-      userByAccount:"user:account:"
+      userByAccount:"user:account:",
+
+      codeByTel:"code:tel:"
     },
     hash:{
       schoolById:"school:id:",
 
       channelById:"channel:id:",
 
+      channelAuthorizationById:"authorization:channel:id:",
+
+      accessTokenByToken:"access:tokon:",
+
       userById:"user:id:",
 
-      sessionByToken:"session:token:",
+      sessionByToken:"session:token:"
     },
     set:{
       channelPushById:"push:channel:"

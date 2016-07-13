@@ -29,3 +29,16 @@ export function generateToken(){
     s(result)
   });
 }
+
+export function generateCode(){
+  return new Promise(async (s,f)=>{
+    try{
+      const rand = await randomBytes(16);
+      var result = rand.toString('hex')
+    }catch(e){
+      f(e);
+      return;
+    }
+    s(result)
+  });
+}
